@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fire.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Explosion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Implosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Explode Sprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Retro Explosion.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fire" parent="." instance=ExtResource( 1 )]
+position = Vector2( 987, 547 )
+
+[node name="Explosion" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1519, 288 )
+
+[node name="Retro Explosion" parent="." instance=ExtResource( 5 )]
+position = Vector2( 382, 278 )
+
+[node name="Implosion" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1590, 784 )
+
+[node name="Sprite Explosion" parent="." instance=ExtResource( 4 )]
+position = Vector2( 307, 617 )
+emitting = true
+
+[node name="Furcifer" parent="Sprite Explosion" index="0"]
+modulate = Color( 1, 1, 1, 0 )
+
+[editable path="Sprite Explosion"]

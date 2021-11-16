@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Explosion_Sheet.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.389423, 0.413462, 0.548077, 0.567308, 0.701923, 0.745192, 1 )
+colors = PoolColorArray( 1, 0.917647, 0, 1, 1, 0.917647, 0, 1, 1, 0.635294, 0.054902, 1, 1, 0.635294, 0.054902, 1, 1, 0.215686, 0.133333, 1, 1, 0.215686, 0.133333, 1, 0.168627, 0.168627, 0.168627, 1, 0.168627, 0.168627, 0.168627, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 0.46
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 720.0
+angle_random = 1.0
+scale = 4.0
+scale_random = 0.82
+color_ramp = SubResource( 3 )
+anim_speed = 1.0
+
+[node name="Retro Explosion" type="Particles2D"]
+material = SubResource( 1 )
+amount = 25
+lifetime = 0.5
+explosiveness = 0.51
+local_coords = false
+process_material = SubResource( 4 )
+texture = ExtResource( 1 )
